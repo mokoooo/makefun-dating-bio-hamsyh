@@ -55,7 +55,6 @@ def main() -> int:
         return 1
     out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
     out_dir.mkdir(parents=True, exist_ok=True)
-    os.chmod(out_dir, 0o755)
     target = out_dir / "entry.txt"
     # Write to a sibling temp file and rename into place, so a partial
     # output can never be graded; then make the file readable by every
